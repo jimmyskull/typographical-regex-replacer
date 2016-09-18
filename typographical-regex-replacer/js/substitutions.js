@@ -40,7 +40,7 @@ chrome.runtime.sendMessage("config", function(response) {
       if (node.parentElement.tagName in ignore) {
         return;
       }
-      if (node.nodeValue.trim().length < 10) {
+      if (node.nodeValue.trim().length < 3) {
         return;
       }
       var regex;

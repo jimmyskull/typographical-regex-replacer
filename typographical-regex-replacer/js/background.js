@@ -23,13 +23,14 @@ var default_replacements = [
   ['([0-9])-([0-9])', '$1–$2'], // Hyphen to en-dash
   // Spacing
   [' , ', ', '], // Remove space before comma
-  ['([\\.…])([a-zA-Z])', '$1 $2'], // Space after sentence
+  ['([a-z][\\.…])([A-Z][a-z])', '$1 $2'], // Space after sentence
   [' *: ', '\u200A:\u2002'], // Space before and after colon
   ['[\u2009\u200A ]*([\\?!]+)', '\u200A$1'], // Space before ? and !
-  ['([a-z])\\.([a-z])', '$1.\u200A$2'],  // e.g. & i.e.
-  ['([A-Z])\\.([A-Z])', '$1.\u200A$2'],  // F.A.Q. & acronyms
-  ['([a-zA-Z])[   ]*/[   ]*([a-zA-Z])', '$1\u200A/\u200A$2'],
+  [' ([a-zA-Z]+)[   ]*/[   ]*([a-zA-Z]+)', ' $1\u200A/\u200A$2'],
+  ['([a-z])\\.([a-z])\\.', '$1.\u200A$2.'],  // e.g. & i.e.
+  ['([A-Z])\\.([A-Z])\\.', '$1.\u200A$2.'],  // F.A.Q. & acronyms
   // Better symbols
+  ['^No.$', '№'],
   ['-->', '⇒'],
   ['->', '⇒'],
   ['<->', '⇐'],
