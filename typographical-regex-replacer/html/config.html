@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Configuration page for the xkcd substitution chrome extension.">
-    <title>XKCD Substitutions Configuration</title>
+    <meta name="description" content="Configuration page for the typographical regex replacer.">
+    <title>Typographical regex replacer configuration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
@@ -19,7 +18,7 @@
 <body class="col-xs-10 col-xs-offset-1">
     <div class="heading">
         <div class="title">
-            <h1>XKCD Substitutions</h1>
+            <h1>REGEX Substitutions</h1>
         </div>
         <ul class="nav nav-pills nav-justified">
             <li>
@@ -51,7 +50,7 @@
         <div>
             <h3>Website Blacklist</h3>
             <p>While this extension tries not to affect things like login forms or emails, due to the complex nature of websites this cannot be guaranteed. So there is a way to stop this extension working on specific sites.</p>
-            <p>If a website's address/URL contains any of the following sites, this extension will ignore it.</p>
+            <p>If a website’s address/URL contains any of the following sites, this extension will ignore it.</p>
             <p>Feel free to add your own to the list.</p>
             <form id="blacklist">
                 <div>
@@ -62,7 +61,7 @@
         <div>
             <div>
                 <h3>Substitutions List</h3>
-                <p>The original word will be replaced with the substituted word.</p>
+                <p>The left regex will match a text to be replaced with the text at the right.</p>
                 <form id="replacements">
                 </form>
             </div>

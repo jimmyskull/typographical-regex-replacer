@@ -1,14 +1,7 @@
-xkcd-substitutions
-==================
+typographical-regex-replacer
+============================
 
-xkcd substitutions chrome extension
+Typographical regex replacement rules
 
-All credit to XKCD.  
-https://xkcd.com/1288/
-https://xkcd.com/1625/
+Replaces text in pages to fix spacing, quotes, and punctuation.
 
-some other xkcd jokes have made it into the newest version.
-https://xkcd.com/1004/
-https://xkcd.com/1418/
-https://xkcd.com/1031/
-https://xkcd.com/1625/

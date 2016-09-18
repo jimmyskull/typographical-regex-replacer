@@ -1,5 +1,4 @@
 // Tribute to  justin.giancola and the s/keyboard/leopard chrome extension.
-// Icon and idea are from www.xkcd.com/1288
 chrome.runtime.sendMessage("config", function(response) {
   "use strict";
   // taken from http://stackoverflow.com/questions/17264639/replace-text-but-keep-case
@@ -22,7 +21,8 @@ chrome.runtime.sendMessage("config", function(response) {
     replacements = response;
     replacementsObject = [];
     for (i = replacements.length - 1; i >= 0; i--) {
-      original = new RegExp("\\b" + replacements[i][0] + "\\b", "gi");
+      //original = new RegExp("\\b" + replacements[i][0] + "\\b", "gi");
+      original = new RegExp(replacements[i][0], "g");
       replacementsObject.push([original, replacements[i][1]]);
     }
     return function(node) {
@@ -31,19 +31,24 @@ chrome.runtime.sendMessage("config", function(response) {
         "STYLE": 0,
         "SCRIPT": 0,
         "NOSCRIPT": 0,
-        "IFRAME": 0,
-        "OBJECT": 0,
-        "INPUT": 0,
-        "FORM": 0,
-        "TEXTAREA": 0
+        //"IFRAME": 0,
+        //"OBJECT": 0,
+        //"INPUT": 0,
+        //"FORM": 0,
+        //"TEXTAREA": 0
       };
       if (node.parentElement.tagName in ignore) {
         return;
       }
+      if (node.nodeValue.trim().length < 10) {
+        return;
+      }
+      var regex;
       for (i = replacementsObject.length - 1; i >= 0; i--) {
-        node.nodeValue = node.nodeValue.replace(replacementsObject[i][0], function(match) {
-          return matchCase(replacementsObject[i][1], match);
-        });
+        node.nodeValue = node.nodeValue.replace(replacementsObject[i][0], replacementsObject[i][1]);
+        //node.nodeValue = node.nodeValue.replace(replacementsObject[i][0], function(match) {
+         //return matchCase(replacementsObject[i][1], match);
+        //});
       }
     };
   })();
