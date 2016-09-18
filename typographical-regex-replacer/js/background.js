@@ -15,8 +15,10 @@ var default_replacements = [
   ['^\\* ?', '•\u2002'],
   ['^- ?', '\u2015\u2002'],
   ['^> ?', '►\u2002'],
-  [' - ', '\u2009—\u2009'], // Hyphen to emdash
-  [' -- ', '\u2009—\u2009'], // Hyphens to em-dash
+  [' - ', '\u200A—\u200A'], // Hyphen to emdash
+  [' -- ', '\u200A—\u200A'], // Hyphens to em-dash
+  ['---', '—'],
+  ['([a-zA-Z])—([a-zA-Z])', '$1\u200A—\u200A$2'], // Hyphens to em-dash
   ['([a-z])-- ', '$1\u2009—\u2009'], // Hyphens to em-dash
   ['([0-9])-([0-9])', '$1–$2'], // Hyphen to en-dash
   // Spacing
@@ -25,8 +27,16 @@ var default_replacements = [
   [' *: ', '\u200A:\u2002'], // Space before and after colon
   ['[\u2009\u200A ]*([\\?!]+)', '\u200A$1'], // Space before ? and !
   ['([a-z])\\.([a-z])', '$1.\u200A$2'],  // e.g. & i.e.
+  ['([A-Z])\\.([A-Z])', '$1.\u200A$2'],  // F.A.Q. & acronyms
+  ['([a-zA-Z])[   ]*/[   ]*([a-zA-Z])', '$1\u200A/\u200A$2'],
   // Better symbols
   ['-->', '⇒'],
+  ['->', '⇒'],
+  ['<->', '⇐'],
+  ['<--', '⇐'],
+  ['<-', '⇐'],
+  ['<-->', '⇔'],
+  ['<==>', '⇔'],
   [' x ', '\u205F×\u205F'],
   ['([0-9])x([0-9])', '$1\u205F×\u205F$2'],
 ];
