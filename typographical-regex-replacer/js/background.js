@@ -29,15 +29,10 @@ var default_replacements = [
   ['-->', '⇒'],
   [' x ', '\u205F×\u205F'],
   ['([0-9])x([0-9])', '$1\u205F×\u205F$2'],
-  ['New York', 'HUEHEUHEUHEUEH']
 ];
 
 //Default Blacklist
 var default_blacklisted_sites = [
-  //"docs.google.com",
-  //"gmail.com",
-  //"mail.google.com",
-  //"inbox.google.com"
 ];
 
 var debug = false;
