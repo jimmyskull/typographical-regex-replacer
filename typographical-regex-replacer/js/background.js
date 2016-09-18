@@ -23,8 +23,8 @@ var default_replacements = [
   [' , ', ', '], // Remove space before comma
   ['([\\.…])([a-zA-Z])', '$1 $2'], // Space after sentence
   [' *: ', '\u200A:\u2002'], // Space before and after colon
-  ['[\u2009\u200A ]*([\\?!]+)', '\u2009$1'], // Space before ? and !
-  ['([a-z])\\.([a-z])', '$1.\u2009$2'],  // e.g. & i.e.
+  ['[\u2009\u200A ]*([\\?!]+)', '\u200A$1'], // Space before ? and !
+  ['([a-z])\\.([a-z])', '$1.\u200A$2'],  // e.g. & i.e.
   // Better symbols
   ['-->', '⇒'],
   [' x ', '\u205F×\u205F'],
