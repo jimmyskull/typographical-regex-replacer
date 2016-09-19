@@ -60,6 +60,7 @@ var default_replacements = [
   ['([0-9]+ ?)[o°º]C', '$1℃'],
   ['([0-9]+ ?)[o°º]F', '$1℉'],
   [' x ', '\u205F×\u205F'],
+  ['([0-9]+)x', '$1×'],
   ['([0-9])x([0-9])', '$1\u205F×\u205F$2'],
   // Specific for english.  These are very likely to mess up things
   ['^i ', 'I '],
